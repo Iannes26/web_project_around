@@ -1,0 +1,10 @@
+body {
+  background-color: black;
+}
+
+.page {
+  margin: auto;
+  max-width: 1280px;
+  color: #ffffff;
+  font-family: "Inter", Arial, sans-serif;
+}
