@@ -1,4 +1,4 @@
-# Tripleten web_project_homeland
+# Tripleten web_project_Around
 
 # 🌍 Projeto Around - Sprint 7 (TripleTen)
 
