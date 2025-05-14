@@ -27,6 +27,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileInfo.textContent = inputInfo.value;
+  popup.className = "popup";
 }
 
 formElement.addEventListener("submit", handleProfileFormSubmit);

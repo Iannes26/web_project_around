@@ -99,6 +99,9 @@
     margin: auto;
     margin-bottom: 11.25%;
   }
+  .profile__name-container {
+    justify-content: center;
+  }
   .profile__info {
     text-align: center;
   }

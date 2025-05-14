@@ -1,5 +1,6 @@
 .form {
   width: 100%;
+  margin: auto;
 }
 
 .form__container {
@@ -34,4 +35,20 @@
   text-align: center;
   padding: 0;
   margin-top: 2.8%;
+}
+
+@media screen and (max-width: 600px) {
+  .form__container {
+    padding: 0 22px;
+    margin: auto;
+  }
+  .form__item {
+    width: 238px;
+    font-size: 14px;
+  }
+
+  .form__button {
+    width: 238px;
+    font-size: 14px;
+  }
 }
