@@ -1,6 +1,6 @@
 # Tripleten web_project_homeland
 
-# 🌍 Projeto Homeland - Sprint 7 (TripleTen)
+# 🌍 Projeto Around - Sprint 7 (TripleTen)
 
 ## 📌 Sobre o Projeto
 
