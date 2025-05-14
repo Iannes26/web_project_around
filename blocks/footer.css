@@ -1,7 +1,15 @@
+.footer {
+  margin: auto;
+  max-width: 880px;
+  width: 100%;
+}
+
 .footer__copyright {
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
-  margin-top: 5.234375%;
+  margin: 0;
   margin-bottom: 4.8%;
+  color: #545454;
+  max-width: 880px;
 }

@@ -1,0 +1,22 @@
+.header {
+  margin: auto;
+  margin-bottom: 4.6%;
+  max-width: 880px;
+  width: 100%;
+}
+
+.header__logo {
+  margin-top: 5.2%;
+  margin-bottom: 4.6%;
+}
+
+.header__line {
+  width: 100%;
+  max-width: 880px;
+}
+
+@media screen and (max-width: 600px) {
+  .header__line {
+    width: 100%;
+  }
+}

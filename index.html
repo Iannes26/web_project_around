@@ -24,36 +24,44 @@
           src="./images/around-USA.svg"
           alt="Around the U.S.A"
         />
-        <img class="Header__line" src="./images/Line.jpg" alt="Line" />
+        <img class="header__line" src="./images/Line.jpg" alt="Line" />
       </header>
 
       <main class="content">
         <section class="profile">
           <div class="profile__container">
-            <img src="./images/profile.jpg" alt="foto de perfil" />
-            <div class="profile__name-container">
-              <h2 class="profile__name">Jacques Cousteau</h2>
-              <button
-                type="button"
-                class="profile__button profile__button-edit"
-              >
-                <img src="./images/pen.svg" alt="pen" />
-              </button>
+            <img
+              class="profile__image"
+              src="./images/profile.jpg"
+              alt="foto de perfil"
+            />
+            <div class="profile__info-container">
+              <div class="profile__name-container">
+                <h2 class="profile__name">Jacques Cousteau</h2>
+                <button
+                  type="submit"
+                  class="profile__button profile__button-edit"
+                >
+                  <img src="./images/pen.svg" alt="pen" />
+                </button>
+              </div>
               <p class="profile__info">Explorador</p>
             </div>
-            <button type="button" class="profile__button profile__button-add">
-              <img src="./images/plus.svg" alt="plus" />
-            </button>
           </div>
+          <button type="submit" class="profile__button profile__button-add">
+            <img src="./images/plus.svg" alt="plus" />
+          </button>
         </section>
 
         <section class="elements">
           <div class="elements__container">
             <img class="elements__image" src="./images/river.jpg" alt="rio" />
-            <h3 class="elements__title">Vale de Yosemite</h3>
-            <button type="button" class="elements__button">
-              <img src="./images/heart.svg" alt="heart" />
-            </button>
+            <div class="elements__name-container">
+              <h3 class="elements__title">Vale de Yosemite</h3>
+              <button type="submit" class="elements__button">
+                <img src="./images/heart.svg" alt="heart" />
+              </button>
+            </div>
           </div>
           <div class="elements__container">
             <img
@@ -61,10 +69,12 @@
               src="./images/two-montain.jpg"
               alt="lago e duas montanhas"
             />
-            <h3 class="elements__title">Lago Louise</h3>
-            <button type="button" class="elements__button">
-              <img src="./images/heart.svg" alt="heart" />
-            </button>
+            <div class="elements__name-container">
+              <h3 class="elements__title">Lago Louise</h3>
+              <button type="submit" class="elements__button">
+                <img src="./images/heart.svg" alt="heart" />
+              </button>
+            </div>
           </div>
           <div class="elements__container">
             <img
@@ -72,10 +82,12 @@
               src="./images/sunset.jpg"
               alt="por do sol na montanha"
             />
-            <h3 class="elements__title">Montanhas Care...</h3>
-            <button type="button" class="elements__button">
-              <img src="./images/heart.svg" alt="heart" />
-            </button>
+            <div class="elements__name-container">
+              <h3 class="elements__title">Montanhas Care...</h3>
+              <button type="submit" class="elements__button">
+                <img src="./images/heart.svg" alt="heart" />
+              </button>
+            </div>
           </div>
           <div class="elements__container">
             <img
@@ -83,10 +95,12 @@
               src="./images/night-montain.jpg"
               alt="montanha a noite"
             />
-            <h3 class="elements__title">Latemar</h3>
-            <button type="button" class="elements__button">
-              <img src="./images/heart.svg" alt="heart" />
-            </button>
+            <div class="elements__name-container">
+              <h3 class="elements__title">Latemar</h3>
+              <button type="submit" class="elements__button">
+                <img src="./images/heart.svg" alt="heart" />
+              </button>
+            </div>
           </div>
           <div class="elements__container">
             <img
@@ -94,17 +108,21 @@
               src="./images/montain-lake.jpg"
               alt="lago e uma montanha"
             />
-            <h3 class="elements__title">Parque Nacional...</h3>
-            <button type="button" class="elements__button">
-              <img src="./images/heart.svg" alt="heart" />
-            </button>
+            <div class="elements__name-container">
+              <h3 class="elements__title">Parque Nacional...</h3>
+              <button type="submit" class="elements__button">
+                <img src="./images/heart.svg" alt="heart" />
+              </button>
+            </div>
           </div>
           <div class="elements__container">
             <img class="elements__image" src="./images/lake.jpg" alt="lago" />
-            <h3 class="elements__title">Lago di Braies</h3>
-            <button type="button" class="elements__button">
-              <img src="./images/heart.svg" alt="heart" />
-            </button>
+            <div class="elements__name-container">
+              <h3 class="elements__title">Lago di Braies</h3>
+              <button type="submit" class="elements__button">
+                <img src="./images/heart.svg" alt="heart" />
+              </button>
+            </div>
           </div>
         </section>
       </main>
@@ -113,5 +131,38 @@
         <p class="footer__copyright">© 2024 Around The U.S.</p>
       </footer>
     </div>
+
+    <div class="popup">
+      <div class="popup__box">
+        <button class="popup__button" type="button">
+          <img
+            class="popup__button-image"
+            src="./images/Close-Icon.png"
+            alt="fechar"
+          />
+        </button>
+        <h2 class="popup__title">Editar perfil</h2>
+        <form class="form popup__container">
+          <fieldset class="form__container">
+            <input
+              class="form__item form__item-name"
+              type="text"
+              placeholder="Nome"
+              name="person-name"
+              required
+            />
+            <input
+              class="form__item form__item-info"
+              type="text"
+              placeholder="Sobre mim"
+              name="person-name"
+              required
+            />
+            <button class="form__button" type="submit">Salvar</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
   </body>
+  <script src="./script/script.js"></script>
 </html>

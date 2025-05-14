@@ -1,0 +1,139 @@
+.profile {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-bottom: 5.8%;
+  max-width: 880px;
+  width: 100%;
+}
+
+.profile__container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.profile__image {
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 100%;
+  margin: 0;
+}
+
+.profile__info-container {
+  margin: auto;
+  max-width: 415px;
+  max-height: 77px;
+}
+
+.profile__name-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.profile__name {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  margin: 0;
+}
+
+.profile__button-edit {
+  padding: 0;
+  background-color: black;
+  border-color: #ffffff;
+  border-width: 1px;
+  width: 24px;
+  height: 24px;
+  opacity: 100%;
+}
+
+.profile__button-edit:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.profile__info {
+  margin: 0;
+  margin-top: 4%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.profile__button-add {
+  align-self: center;
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  border-color: #ffffff;
+  border-width: 2px;
+  padding: 0;
+  opacity: 100%;
+}
+
+.profile__button-add:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .profile {
+    display: block;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 5.8%;
+  }
+  .profile__container {
+    display: block;
+    margin: auto;
+  }
+  .profile__image {
+    display: block;
+    margin: auto;
+    margin-bottom: 5%;
+  }
+  .profile__info-container {
+    margin: auto;
+    margin-bottom: 11.25%;
+  }
+  .profile__info {
+    text-align: center;
+  }
+  .profile__button-add {
+    display: block;
+    margin: auto;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile__container {
+    max-width: 320px;
+    margin: auto;
+  }
+
+  .profile__image {
+    margin-bottom: 9.3%;
+  }
+
+  .profile__name-container {
+    justify-content: center;
+  }
+
+  .profile__name {
+    font-size: 22px;
+    line-height: 100%;
+  }
+
+  .profile__info {
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  .profile__button-add {
+    width: 282px;
+  }
+}
