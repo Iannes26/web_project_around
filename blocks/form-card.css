@@ -1,16 +1,16 @@
-.form {
+.form-card {
   width: 100%;
   margin: auto;
 }
 
-.form__container {
+.form-card__container {
   max-width: 358px;
   margin: auto;
   padding: 0;
   border: 0;
 }
 
-.form__item {
+.form-card__item {
   margin-bottom: 8.2%;
   width: 358px;
   outline: none;
@@ -22,7 +22,7 @@
   line-height: 100%;
 }
 
-.form__button {
+.form-card__button {
   background-color: black;
   width: 358px;
   height: 50px;
@@ -37,22 +37,22 @@
   margin-top: 2.8%;
 }
 
-.form__button:hover {
+.form-card__button:hover {
   opacity: 80%;
   cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
-  .form__container {
+  .form-card__container {
     padding: 0 22px;
     margin: auto;
   }
-  .form__item {
+  .form-card__item {
     width: 238px;
     font-size: 14px;
   }
 
-  .form__button {
+  .form-card__button {
     width: 238px;
     font-size: 14px;
   }
