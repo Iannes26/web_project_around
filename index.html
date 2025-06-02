@@ -53,78 +53,7 @@
           </button>
         </section>
 
-        <section class="elements">
-          <div class="elements__container">
-            <img class="elements__image" src="./images/river.jpg" alt="rio" />
-            <div class="elements__name-container">
-              <h3 class="elements__title">Vale de Yosemite</h3>
-              <button type="submit" class="elements__button">
-                <img src="./images/heart.svg" alt="heart" />
-              </button>
-            </div>
-          </div>
-          <div class="elements__container">
-            <img
-              class="elements__image"
-              src="./images/two-montain.jpg"
-              alt="lago e duas montanhas"
-            />
-            <div class="elements__name-container">
-              <h3 class="elements__title">Lago Louise</h3>
-              <button type="submit" class="elements__button">
-                <img src="./images/heart.svg" alt="heart" />
-              </button>
-            </div>
-          </div>
-          <div class="elements__container">
-            <img
-              class="elements__image"
-              src="./images/sunset.jpg"
-              alt="por do sol na montanha"
-            />
-            <div class="elements__name-container">
-              <h3 class="elements__title">Montanhas Care...</h3>
-              <button type="submit" class="elements__button">
-                <img src="./images/heart.svg" alt="heart" />
-              </button>
-            </div>
-          </div>
-          <div class="elements__container">
-            <img
-              class="elements__image"
-              src="./images/night-montain.jpg"
-              alt="montanha a noite"
-            />
-            <div class="elements__name-container">
-              <h3 class="elements__title">Latemar</h3>
-              <button type="submit" class="elements__button">
-                <img src="./images/heart.svg" alt="heart" />
-              </button>
-            </div>
-          </div>
-          <div class="elements__container">
-            <img
-              class="elements__image"
-              src="./images/montain-lake.jpg"
-              alt="lago e uma montanha"
-            />
-            <div class="elements__name-container">
-              <h3 class="elements__title">Parque Nacional...</h3>
-              <button type="submit" class="elements__button">
-                <img src="./images/heart.svg" alt="heart" />
-              </button>
-            </div>
-          </div>
-          <div class="elements__container">
-            <img class="elements__image" src="./images/lake.jpg" alt="lago" />
-            <div class="elements__name-container">
-              <h3 class="elements__title">Lago di Braies</h3>
-              <button type="submit" class="elements__button">
-                <img src="./images/heart.svg" alt="heart" />
-              </button>
-            </div>
-          </div>
-        </section>
+        <section class="elements"></section>
       </main>
 
       <footer class="footer">
@@ -167,11 +96,7 @@
     <div class="popup-card">
       <div class="popup-card__box">
         <button class="popup-card__button">
-          <img
-            class="popup-card__button-image"
-            src="./images/Close-Icon.png"
-            alt="fechar"
-          />
+          <img src="./images/Close-Icon.png" alt="fechar" />
         </button>
         <h2 class="popup-card__title">Novo local</h2>
         <form class="form-card popup-card__container">
@@ -195,6 +120,19 @@
         </form>
       </div>
     </div>
+
+    <template id="template-cards">
+      <div class="elements__container">
+        <button class="elements__button-trash" type="submit">
+          <img src="./images/Trash.png" alt="trash" />
+        </button>
+        <img class="elements__image" src="" alt="" />
+        <div class="elements__name-container">
+          <h3 class="elements__title"></h3>
+          <button type="submit" class="elements__button"></button>
+        </div>
+      </div>
+    </template>
 
     <script src="./scripts/index.js"></script>
   </body>
