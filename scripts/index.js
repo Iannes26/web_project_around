@@ -35,7 +35,8 @@ const initialCards = [
   },
 ];
 
-initialCards.forEach((card) => {
+function createCard(name, link) {
+  console.log(link);
   const templateCards = document.querySelector("#template-cards").content;
   const containerCards = templateCards
     .querySelector(".elements__container")
@@ -44,9 +45,9 @@ initialCards.forEach((card) => {
   const cardImage = containerCards.querySelector(".elements__image");
   const sectionCards = document.querySelector(".elements");
 
-  cardTitle.textContent = card.name;
-  cardImage.src = card.link;
-  cardImage.alt = card.name;
+  cardTitle.textContent = name;
+  cardImage.src = link;
+  cardImage.alt = name;
 
   sectionCards.prepend(containerCards);
 
@@ -61,6 +62,10 @@ initialCards.forEach((card) => {
   heartButton.addEventListener("click", function () {
     heartButton.className = "elements__button_active";
   });
+}
+
+initialCards.forEach((card) => {
+  createCard(card.name, card.link);
 });
 
 function openPopup() {
@@ -105,3 +110,20 @@ function closeCardPopup() {
 }
 
 closeCardButton.addEventListener("click", closeCardPopup);
+
+function handleElementsFormSubmit(evt) {
+  evt.preventDefault();
+  const newCard = {
+    name: "",
+    link: "",
+  };
+
+  newCard.name = inputTitle.value;
+  newCard.link = inputLink.value;
+
+  createCard(newCard.name, newCard.link);
+
+  popupCard.className = "popup-card";
+}
+
+formCardElement.addEventListener("submit", handleElementsFormSubmit);
