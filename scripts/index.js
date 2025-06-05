@@ -36,7 +36,6 @@ const initialCards = [
 ];
 
 function createCard(name, link) {
-  console.log(link);
   const templateCards = document.querySelector("#template-cards").content;
   const containerCards = templateCards
     .querySelector(".elements__container")
@@ -60,8 +59,26 @@ function createCard(name, link) {
   const heartButton = containerCards.querySelector(".elements__button");
 
   heartButton.addEventListener("click", function () {
-    heartButton.className = "elements__button_active";
+    heartButton.classList.toggle("elements__button_active");
   });
+
+  const popupImage = document.querySelector(".popup-image");
+  const popupPhoto = popupImage.querySelector(".popup-image__photo");
+  const popupImageButton = popupImage.querySelector(".popup-image__button");
+
+  function openPopupImage() {
+    popupImage.className = "popup-image_opened";
+    popupPhoto.src = cardImage.src;
+    popupPhoto.alt = cardImage.alt;
+  }
+
+  cardImage.addEventListener("click", openPopupImage);
+
+  function closePopupImage() {
+    popupImage.className = "popup-image";
+  }
+
+  popupImageButton.addEventListener("click", closePopupImage);
 }
 
 initialCards.forEach((card) => {
