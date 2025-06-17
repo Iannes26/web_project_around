@@ -71,13 +71,15 @@
           />
         </button>
         <h2 class="popup__title">Editar perfil</h2>
-        <form class="form popup__container">
+        <form class="form popup__container" novalidate>
           <fieldset class="form__container">
             <input
               class="form__item form__item-name"
               type="text"
               placeholder="Nome"
               name="person-name"
+              minlength="2"
+              maxlength="40"
               required
             />
             <input
@@ -85,6 +87,8 @@
               type="text"
               placeholder="Sobre mim"
               name="person-name"
+              minlength="2"
+              maxlength="200"
               required
             />
             <button class="form__button" type="submit">Salvar</button>
@@ -99,18 +103,20 @@
           <img src="./images/Close-Icon.png" alt="fechar" />
         </button>
         <h2 class="popup-card__title">Novo local</h2>
-        <form class="form-card popup-card__container">
+        <form class="form-card popup-card__container" novalidate>
           <fieldset class="form-card__container">
             <input
-              class="form-card__item form-card__item-title"
+              class="form-card__item form__item-title"
               type="text"
               placeholder="Título"
               name="person-name"
+              minlength="2"
+              maxlength="30"
               required
             />
             <input
-              class="form-card__item form-card__item-link"
-              type="text"
+              class="form-card__item form__item-link"
+              type="url"
               placeholder="Link de imagem"
               name="person-name"
               required
@@ -126,7 +132,7 @@
         <button class="popup-image__button">
           <img src="./images/Close-Icon.png" alt="fechar" />
         </button>
-        <img class="popup-image__photo" src="" alt="" />
+        <img class="popup-image__photo" src=" " alt=" " />
       </div>
     </div>
 
@@ -135,7 +141,7 @@
         <button class="elements__button-trash" type="submit">
           <img src="./images/Trash.png" alt="trash" />
         </button>
-        <img class="elements__image" src="" alt="" />
+        <img class="elements__image" src=" " alt=" " />
         <div class="elements__name-container">
           <h3 class="elements__title"></h3>
           <button type="submit" class="elements__button"></button>
@@ -144,5 +150,6 @@
     </template>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
