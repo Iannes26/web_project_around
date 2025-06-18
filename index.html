@@ -71,27 +71,33 @@
           />
         </button>
         <h2 class="popup__title">Editar perfil</h2>
-        <form class="form popup__container" novalidate>
+        <form class="form popup__container popup__form" novalidate>
           <fieldset class="form__container">
             <input
-              class="form__item form__item-name"
+              class="form__item form__item-name popup__input"
               type="text"
               placeholder="Nome"
               name="person-name"
               minlength="2"
               maxlength="40"
+              id="name-input"
               required
             />
+            <span class="name-input-error"></span>
             <input
-              class="form__item form__item-info"
+              class="form__item form__item-info popup__input"
               type="text"
               placeholder="Sobre mim"
               name="person-name"
               minlength="2"
               maxlength="200"
+              id="info-input"
               required
             />
-            <button class="form__button" type="submit">Salvar</button>
+            <span class="info-input-error"></span>
+            <button class="form__button popup__button-submit" type="submit">
+              Salvar
+            </button>
           </fieldset>
         </form>
       </div>
@@ -103,25 +109,34 @@
           <img src="./images/Close-Icon.png" alt="fechar" />
         </button>
         <h2 class="popup-card__title">Novo local</h2>
-        <form class="form-card popup-card__container" novalidate>
+        <form class="form-card popup-card__container popup__form" novalidate>
           <fieldset class="form-card__container">
             <input
-              class="form-card__item form__item-title"
+              class="form-card__item form-card__item-title popup__input"
               type="text"
               placeholder="Título"
               name="person-name"
               minlength="2"
               maxlength="30"
+              id="title-input"
               required
             />
+            <span class="title-input-error"></span>
             <input
-              class="form-card__item form__item-link"
+              class="form-card__item form-card__item-link popup__input"
               type="url"
               placeholder="Link de imagem"
               name="person-name"
+              id="link-input"
               required
             />
-            <button class="form-card__button" type="submit">Criar</button>
+            <span class="link-input-error"></span>
+            <button
+              class="form-card__button popup__button-submit"
+              type="submit"
+            >
+              Criar
+            </button>
           </fieldset>
         </form>
       </div>
