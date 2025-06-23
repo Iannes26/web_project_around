@@ -37,8 +37,8 @@
   transform: translate(-50%, -50%);
   background-color: #ffffff;
   width: 430px;
-  height: 330px;
   border-radius: 10px;
+  padding-bottom: 34px;
 }
 
 .popup__title {
@@ -55,6 +55,18 @@
   margin-top: 0;
   margin: auto;
   width: 100%;
+}
+
+.popup__input_type_error {
+  border-bottom: 2px #ff0000 solid;
+}
+
+.popup__error_visible {
+  color: #ff0000;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,8 +1,8 @@
 const formObject = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button-submit",
-  inactiveButtonClass: "popup__button-submit_disabled",
+  submitButtonSelector: ".form__button-submit",
+  inactiveButtonClass: "form__button-submit_disabled",
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
 };
@@ -38,8 +38,10 @@ const hasInvalidInput = (inputList) => {
 const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add(formObject.inactiveButtonClass);
+    buttonElement.disabled = true;
   } else {
     buttonElement.classList.remove(formObject.inactiveButtonClass);
+    buttonElement.disabled = false;
   }
 };
 

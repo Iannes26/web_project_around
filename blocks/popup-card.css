@@ -23,7 +23,7 @@
   transform: translate(-50%, -50%);
   background-color: #ffffff;
   width: 430px;
-  height: 330px;
+  padding-bottom: 34px;
   border-radius: 10px;
 }
 
