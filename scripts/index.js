@@ -74,11 +74,22 @@ function createCard(name, link) {
 
   cardImage.addEventListener("click", openPopupImage);
 
-  function closePopupImage() {
-    popupImage.className = "popup-image";
+  function closePopupImage(evt) {
+    if (
+      evt.target.classList.contains("popup-image_opened") ||
+      evt.target.classList.contains("popup__button-close")
+    ) {
+      popupImage.className = "popup-image";
+    }
   }
 
   popupImageButton.addEventListener("click", closePopupImage);
+  popupImage.addEventListener("click", closePopupImage);
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      popupImage.className = "popup-image";
+    }
+  });
 }
 
 initialCards.forEach((card) => {
@@ -93,11 +104,22 @@ function openPopup() {
 
 editButton.addEventListener("click", openPopup);
 
-function closePopup() {
-  popup.className = "popup";
+function closePopup(evt) {
+  if (
+    evt.target.classList.contains("popup_opened") ||
+    evt.target.classList.contains("popup__button-close")
+  ) {
+    popup.className = "popup";
+  }
 }
 
 closeButton.addEventListener("click", closePopup);
+popup.addEventListener("click", closePopup);
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    popup.className = "popup";
+  }
+});
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -122,11 +144,22 @@ function openCardPopup() {
 
 addButton.addEventListener("click", openCardPopup);
 
-function closeCardPopup() {
-  popupCard.className = "popup-card";
+function closeCardPopup(evt) {
+  if (
+    evt.target.classList.contains("popup-card_opened") ||
+    evt.target.classList.contains("popup__button-close")
+  ) {
+    popupCard.className = "popup-card";
+  }
 }
 
 closeCardButton.addEventListener("click", closeCardPopup);
+popupCard.addEventListener("click", closeCardPopup);
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    popupCard.className = "popup-card";
+  }
+});
 
 function handleElementsFormSubmit(evt) {
   evt.preventDefault();
