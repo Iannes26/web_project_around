@@ -65,11 +65,13 @@ function createCard(name, link) {
   const popupImage = document.querySelector(".popup-image");
   const popupPhoto = popupImage.querySelector(".popup-image__photo");
   const popupImageButton = popupImage.querySelector(".popup-image__button");
+  const popupImageTitle = popupImage.querySelector(".popup-image__title");
 
   function openPopupImage() {
     popupImage.className = "popup-image_opened";
     popupPhoto.src = cardImage.src;
     popupPhoto.alt = cardImage.alt;
+    popupImageTitle.textContent = cardTitle.textContent;
   }
 
   cardImage.addEventListener("click", openPopupImage);

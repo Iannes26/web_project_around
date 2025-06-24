@@ -44,6 +44,16 @@
   max-height: 540px;
 }
 
+.popup-image__title {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: #ffffff;
+  margin: 0;
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 880px) {
   .popup-image__box {
     max-width: 433px;
