@@ -7,6 +7,7 @@ import {
   closeCardPopup,
   handleElementsFormSubmit,
   handleProfileFormSubmit,
+  createCard,
 } from "./utils.js";
 
 const editButton = document
@@ -83,8 +84,7 @@ const initialCards = [
 ];
 
 initialCards.forEach((item) => {
-  const card = new Card(item.name, item.link, "#template-cards");
-  const cardElement = card.generateCard();
+  const cardElement = createCard(item.name, item.link);
   const sectionCards = document.querySelector(".elements");
 
   sectionCards.prepend(cardElement);

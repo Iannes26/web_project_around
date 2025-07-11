@@ -14,10 +14,12 @@ export function openPopup() {
 export function closePopup(evt) {
   if (
     evt.target.classList.contains("popup_opened") ||
-    evt.target.classList.contains("popup__button-close")
+    evt.target.classList.contains("popup__button-close") ||
+    evt.target.classList.contains("popup__button-image")
   ) {
     const popup = document.querySelector(".popup");
     popup.className = "popup";
+    removeEventListener;
   }
 }
 
@@ -41,11 +43,19 @@ export function openCardPopup() {
 export function closeCardPopup(evt) {
   if (
     evt.target.classList.contains("popup-card_opened") ||
-    evt.target.classList.contains("popup__button-close")
+    evt.target.classList.contains("popup__button-close") ||
+    evt.target.classList.contains("popup__button-image")
   ) {
     const popupCard = document.querySelector(".popup-card");
     popupCard.className = "popup-card";
   }
+}
+
+export function createCard(name, link) {
+  const card = new Card(name, link, "#template-cards");
+  const cardElement = card.generateCard();
+
+  return cardElement;
 }
 
 export function handleElementsFormSubmit(evt) {
@@ -60,8 +70,7 @@ export function handleElementsFormSubmit(evt) {
   newCard.name = inputTitle.value;
   newCard.link = inputLink.value;
 
-  const card = new Card(newCard.name, newCard.link, "#template-cards");
-  const cardElement = card.generateCard();
+  const cardElement = createCard(newCard.name, newCard.link);
 
   const popupCard = document.querySelector(".popup-card");
   popupCard.className = "popup-card";

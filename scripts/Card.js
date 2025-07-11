@@ -39,7 +39,8 @@ export class Card {
   _closePopupImage(evt) {
     if (
       evt.target.classList.contains("popup-image_opened") ||
-      evt.target.classList.contains("popup__button-close")
+      evt.target.classList.contains("popup__button-close") ||
+      evt.target.classList.contains("popup__button-image")
     ) {
       this._popupImage.className = "popup-image";
     }
