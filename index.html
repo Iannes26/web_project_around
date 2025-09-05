@@ -61,20 +61,20 @@
       </footer>
     </div>
 
-    <div class="popup">
-      <div class="popup__box">
-        <button class="popup__button popup__button-close" type="button">
+    <div class="overlay" id="edit-overlay">
+      <div class="overlay__popup">
+        <button class="overlay__button" type="button">
           <img
-            class="popup__button-image"
+            class="overlay__button-image"
             src="./images/Close-Icon.png"
             alt="fechar"
           />
         </button>
-        <h2 class="popup__title">Editar perfil</h2>
-        <form class="form popup__container popup__form" novalidate>
+        <h2 class="overlay__title">Editar perfil</h2>
+        <form class="form overlay__form" id="edit-form" novalidate>
           <fieldset class="form__container">
             <input
-              class="form__item form__item-name popup__input"
+              class="form__item overlay__input"
               type="text"
               placeholder="Nome"
               name="person-name"
@@ -85,7 +85,7 @@
             />
             <span class="name-input-error"></span>
             <input
-              class="form__item form__item-info popup__input"
+              class="form__item form__item_info overlay__input"
               type="text"
               placeholder="Sobre mim"
               name="person-name"
@@ -103,20 +103,20 @@
       </div>
     </div>
 
-    <div class="popup-card">
-      <div class="popup-card__box">
-        <button class="popup-card__button popup__button-close">
+    <div class="overlay" id="card-overlay">
+      <div class="overlay__popup">
+        <button class="overlay__button">
           <img
-            class="popup__button-image"
+            class="overlay__button-image"
             src="./images/Close-Icon.png"
             alt="fechar"
           />
         </button>
-        <h2 class="popup-card__title">Novo local</h2>
-        <form class="form-card popup-card__container popup__form" novalidate>
-          <fieldset class="form-card__container">
+        <h2 class="overlay__title">Novo local</h2>
+        <form class="form overlay__form" id="card-form" novalidate>
+          <fieldset class="form__container">
             <input
-              class="form-card__item form-card__item-title popup__input"
+              class="form__item overlay__input"
               type="text"
               placeholder="Título"
               name="person-name"
@@ -127,7 +127,7 @@
             />
             <span class="title-input-error"></span>
             <input
-              class="form-card__item form-card__item-link popup__input"
+              class="form__item form__item_link overlay__input"
               type="url"
               placeholder="Link de imagem"
               name="person-name"
@@ -135,7 +135,7 @@
               required
             />
             <span class="link-input-error"></span>
-            <button class="form-card__button form__button-submit" type="submit">
+            <button class="form__button form__button-submit" type="submit">
               Criar
             </button>
           </fieldset>
@@ -143,17 +143,17 @@
       </div>
     </div>
 
-    <div class="popup-image">
-      <div class="popup-image__box">
-        <button class="popup-image__button popup__button-close">
+    <div class="overlay" id="image-overlay">
+      <div class="overlay__popup_content_image">
+        <button class="overlay__button">
           <img
             src="./images/Close-Icon.png"
             alt="fechar"
-            class="popup__button-image"
+            class="overlay__button-image"
           />
         </button>
-        <img class="popup-image__photo" src=" " alt=" " />
-        <h4 class="popup-image__title"></h4>
+        <img class="overlay__image" src=" " alt=" " />
+        <h4 class="overlay__caption"></h4>
       </div>
     </div>
 

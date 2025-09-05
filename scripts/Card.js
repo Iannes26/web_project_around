@@ -3,7 +3,7 @@ export class Card {
     this._name = name;
     this._link = link;
     this._templateSelector = templateSelector;
-    this._popupImage = document.querySelector(".popup-image");
+    this._popupImage = document.querySelector("#image-overlay");
   }
 
   _getTemplate() {
@@ -16,7 +16,6 @@ export class Card {
   }
 
   _handleTrashButtonClick() {
-    console.log(this._element);
     this._element.remove();
   }
 
@@ -26,11 +25,9 @@ export class Card {
   }
 
   _openPopupImage() {
-    const popupPhoto = this._popupImage.querySelector(".popup-image__photo");
-    const popupImageTitle = this._popupImage.querySelector(
-      ".popup-image__title"
-    );
-    this._popupImage.className = "popup-image_opened";
+    const popupPhoto = this._popupImage.querySelector(".overlay__image");
+    const popupImageTitle = this._popupImage.querySelector(".overlay__caption");
+    this._popupImage.className = "overlay_opened";
     popupPhoto.src = this._cardImage.src;
     popupPhoto.alt = this._cardImage.alt;
     popupImageTitle.textContent = this._cardTitle.textContent;
@@ -38,17 +35,17 @@ export class Card {
 
   _closePopupImage(evt) {
     if (
-      evt.target.classList.contains("popup-image_opened") ||
-      evt.target.classList.contains("popup__button-close") ||
-      evt.target.classList.contains("popup__button-image")
+      evt.target.classList.contains("overlay_opened") ||
+      evt.target.classList.contains("overlay__button") ||
+      evt.target.classList.contains("overlay__button-image")
     ) {
-      this._popupImage.className = "popup-image";
+      this._popupImage.className = "overlay";
     }
   }
 
   _closeEscapePopupImage(evt) {
     if (evt.key === "Escape") {
-      this._popupImage.className = "popup-image";
+      this._popupImage.className = "overlay";
     }
   }
 
@@ -69,7 +66,7 @@ export class Card {
         this._openPopupImage();
       });
     const popupImage = document
-      .querySelector(".popup-image")
+      .querySelector("#image-overlay")
       .addEventListener("click", (evt) => {
         this._closePopupImage(evt);
       });

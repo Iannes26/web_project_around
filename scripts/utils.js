@@ -1,54 +1,45 @@
 import { Card } from "./Card.js";
 
-export function openPopup() {
-  const popup = document.querySelector(".popup");
-  const inputName = document.querySelector(".form__item-name");
-  const inputInfo = document.querySelector(".form__item-info");
-  const profileName = document.querySelector(".profile__name");
-  const profileInfo = document.querySelector(".profile__info");
-  popup.classList.add("popup_opened");
-  inputName.value = profileName.textContent;
-  inputInfo.value = profileInfo.textContent;
+function handleEscUp(modal) {
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "a") {
+      modal.className = "overlay";
+    }
+  });
 }
 
-export function closePopup(evt) {
+export function openPopup(modal) {
+  const inputName = document.querySelector("#name-input");
+  const inputInfo = document.querySelector("#info-input");
+  const profileName = document.querySelector(".profile__name");
+  const profileInfo = document.querySelector(".profile__info");
+  inputName.value = profileName.textContent;
+  inputInfo.value = profileInfo.textContent;
+  modal.classList.add("overlay_opened");
+  document.addEventListener("keydown", () => handleEscUp(modal));
+}
+
+export function closePopup(evt, modal) {
   if (
-    evt.target.classList.contains("popup_opened") ||
-    evt.target.classList.contains("popup__button-close") ||
-    evt.target.classList.contains("popup__button-image")
+    evt.target.classList.contains("overlay_opened") ||
+    evt.target.classList.contains("overlay__button") ||
+    evt.target.classList.contains("overlay__button-image")
   ) {
-    const popup = document.querySelector(".popup");
-    popup.className = "popup";
-    removeEventListener;
+    modal.className = "overlay";
+    document.removeEventListener("keydown", () => handleEscUp(modal));
   }
 }
 
 export function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   const profileName = document.querySelector(".profile__name");
-  const inputName = document.querySelector(".form__item-name");
-  const inputInfo = document.querySelector(".form__item-info");
+  const inputName = document.querySelector("#name-input");
+  const inputInfo = document.querySelector("#info-input");
   const profileInfo = document.querySelector(".profile__info");
   profileName.textContent = inputName.value;
   profileInfo.textContent = inputInfo.value;
-  const popup = document.querySelector(".popup");
-  popup.className = "popup";
-}
-
-export function openCardPopup() {
-  const popupCard = document.querySelector(".popup-card");
-  popupCard.classList.add("popup-card_opened");
-}
-
-export function closeCardPopup(evt) {
-  if (
-    evt.target.classList.contains("popup-card_opened") ||
-    evt.target.classList.contains("popup__button-close") ||
-    evt.target.classList.contains("popup__button-image")
-  ) {
-    const popupCard = document.querySelector(".popup-card");
-    popupCard.className = "popup-card";
-  }
+  const popup = document.querySelector("#edit-overlay");
+  popup.className = "overlay";
 }
 
 export function createCard(name, link) {
@@ -65,15 +56,15 @@ export function handleElementsFormSubmit(evt) {
     link: "",
   };
 
-  const inputTitle = document.querySelector(".form-card__item-title");
-  const inputLink = document.querySelector(".form-card__item-link");
+  const inputTitle = document.querySelector("#title-input");
+  const inputLink = document.querySelector("#link-input");
   newCard.name = inputTitle.value;
   newCard.link = inputLink.value;
 
   const cardElement = createCard(newCard.name, newCard.link);
 
-  const popupCard = document.querySelector(".popup-card");
-  popupCard.className = "popup-card";
+  const popupCard = document.querySelector("#card-overlay");
+  popupCard.className = "overlay";
   const elements = document.querySelector(".elements");
   elements.prepend(cardElement);
 }
