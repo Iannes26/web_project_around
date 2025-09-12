@@ -7,6 +7,7 @@ import {
   handleProfileFormSubmit,
   createCard,
 } from "./utils.js";
+import { Section } from "./Section.js";
 
 const editOverlay = document.querySelector("#edit-overlay");
 
@@ -71,12 +72,18 @@ const initialCards = [
   },
 ];
 
-initialCards.forEach((item) => {
-  const cardElement = createCard(item.name, item.link);
-  const sectionCards = document.querySelector(".elements");
+const cardList = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      const cardElement = createCard(item.name, item.link);
+      cardList.addItem(cardElement);
+    },
+  },
+  ".elements"
+);
 
-  sectionCards.prepend(cardElement);
-});
+cardList.renderer(initialCards);
 
 const formObject = {
   formSelector: ".form",
