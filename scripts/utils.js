@@ -2,7 +2,7 @@ import { Card } from "./Card.js";
 
 function handleEscUp(modal) {
   document.addEventListener("keydown", (evt) => {
-    if (evt.key === "a") {
+    if (evt.key === "Esc") {
       modal.className = "overlay";
     }
   });
