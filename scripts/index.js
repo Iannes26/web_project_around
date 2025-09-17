@@ -1,46 +1,43 @@
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
 import {
-  openPopup,
-  closePopup,
+  /* openPopup,
+  closePopup, */
   handleElementsFormSubmit,
   handleProfileFormSubmit,
   createCard,
 } from "./utils.js";
 import { Section } from "./Section.js";
+import { Popup } from "./Popup.js";
 
-const editOverlay = document.querySelector("#edit-overlay");
+const editOverlay = new Popup("#edit-overlay");
+editOverlay.setEventListeners();
 
 const editButton = document
   .querySelector(".profile__button-edit")
-  .addEventListener("click", () => openPopup(editOverlay));
-
-const closeButton = document
-  .querySelector(".overlay__button")
-  .addEventListener("click", (evt) => closePopup(evt, editOverlay));
-
-const popup = document
-  .querySelector("#edit-overlay")
-  .addEventListener("click", (evt) => closePopup(evt, editOverlay));
+  .addEventListener("click", () => editOverlay.open());
 
 const formElement = document
   .querySelector("#edit-form")
   .addEventListener("submit", handleProfileFormSubmit);
 
-const cardOverlay = document.querySelector("#card-overlay");
+/* const cardOverlay = document.querySelector("#card-overlay"); */
+
+const cardOverlay = new Popup("#card-overlay");
+cardOverlay.setEventListeners();
 
 const addButton = document
   .querySelector(".profile__button-add")
-  .addEventListener("click", () => openPopup(cardOverlay));
+  .addEventListener("click", () => cardOverlay.open());
 
-const closeCardButton = document
+/* const closeCardButton = document
   .querySelector(".overlay__button")
   .addEventListener("click", (evt) => closePopup(evt, cardOverlay));
 
 const popupCard = document
   .querySelector("#card-overlay")
   .addEventListener("click", (evt) => closePopup(evt, cardOverlay));
-
+ */
 const formCardElement = document
   .querySelector("#card-form")
   .addEventListener("submit", handleElementsFormSubmit);

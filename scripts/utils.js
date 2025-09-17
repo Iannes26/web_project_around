@@ -1,6 +1,6 @@
 import { Card } from "./Card.js";
 
-function handleEscUp(modal) {
+/* function handleEscUp(modal) {
   document.addEventListener("keydown", (evt) => {
     if (evt.key === "Esc") {
       modal.className = "overlay";
@@ -28,7 +28,7 @@ export function closePopup(evt, modal) {
     modal.className = "overlay";
     document.removeEventListener("keydown", () => handleEscUp(modal));
   }
-}
+} */
 
 export function handleProfileFormSubmit(evt) {
   evt.preventDefault();
