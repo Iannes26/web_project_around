@@ -9,6 +9,7 @@ import {
 } from "./utils.js";
 import { Section } from "./Section.js";
 import { Popup } from "./Popup.js";
+import { PopupWithImage } from "./PopupWithImage.js";
 
 const editOverlay = new Popup("#edit-overlay");
 editOverlay.setEventListeners();
@@ -21,8 +22,6 @@ const formElement = document
   .querySelector("#edit-form")
   .addEventListener("submit", handleProfileFormSubmit);
 
-/* const cardOverlay = document.querySelector("#card-overlay"); */
-
 const cardOverlay = new Popup("#card-overlay");
 cardOverlay.setEventListeners();
 
@@ -30,14 +29,6 @@ const addButton = document
   .querySelector(".profile__button-add")
   .addEventListener("click", () => cardOverlay.open());
 
-/* const closeCardButton = document
-  .querySelector(".overlay__button")
-  .addEventListener("click", (evt) => closePopup(evt, cardOverlay));
-
-const popupCard = document
-  .querySelector("#card-overlay")
-  .addEventListener("click", (evt) => closePopup(evt, cardOverlay));
- */
 const formCardElement = document
   .querySelector("#card-form")
   .addEventListener("submit", handleElementsFormSubmit);
@@ -96,3 +87,6 @@ const form = document.querySelector(".form");
 const formValidation = new FormValidator(formObject, form);
 
 formValidation.enableValidation();
+
+export const imageOverlay = new PopupWithImage("#image-overlay");
+imageOverlay.setEventListeners();

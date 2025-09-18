@@ -1,9 +1,10 @@
 export class Card {
-  constructor(name, link, templateSelector) {
+  constructor(name, link, templateSelector, openPopupImage) {
     this._name = name;
     this._link = link;
     this._templateSelector = templateSelector;
     this._popupImage = document.querySelector("#image-overlay");
+    this._openPopupImage = openPopupImage;
   }
 
   _getTemplate() {
@@ -24,7 +25,7 @@ export class Card {
     heartButton.classList.toggle("elements__button_active");
   }
 
-  _openPopupImage() {
+  /*  _openPopupImage() {
     const popupPhoto = this._popupImage.querySelector(".overlay__image");
     const popupImageTitle = this._popupImage.querySelector(".overlay__caption");
     this._popupImage.className = "overlay_opened";
@@ -47,7 +48,7 @@ export class Card {
     if (evt.key === "Escape") {
       this._popupImage.className = "overlay";
     }
-  }
+  } */
 
   _setEventListeners() {
     const trashButton = this._element
@@ -60,18 +61,8 @@ export class Card {
       .addEventListener("click", () => {
         this._handleHeartButtonClick();
       });
-    const cardImage = this._element
-      .querySelector(".elements__image")
-      .addEventListener("click", () => {
-        this._openPopupImage();
-      });
-    const popupImage = document
-      .querySelector("#image-overlay")
-      .addEventListener("click", (evt) => {
-        this._closePopupImage(evt);
-      });
-    document.addEventListener("keydown", (evt) => {
-      this._closeEscapePopupImage(evt);
+    this._cardImage.addEventListener("click", () => {
+      this._openPopupImage(this);
     });
   }
 

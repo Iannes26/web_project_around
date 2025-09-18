@@ -1,4 +1,5 @@
 import { Card } from "./Card.js";
+import { imageOverlay } from "./index.js";
 
 /* function handleEscUp(modal) {
   document.addEventListener("keydown", (evt) => {
@@ -43,7 +44,10 @@ export function handleProfileFormSubmit(evt) {
 }
 
 export function createCard(name, link) {
-  const card = new Card(name, link, "#template-cards");
+  const card = new Card(name, link, "#template-cards", () => {
+    imageOverlay.open(link, name);
+    console.log(link);
+  });
   const cardElement = card.generateCard();
 
   return cardElement;
