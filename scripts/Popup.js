@@ -1,8 +1,6 @@
 export class Popup {
   constructor(popupSelector) {
     this._popupSelector = document.querySelector(popupSelector);
-    this._closeButton = document.querySelector(".overlay__button");
-    this._closeButtonImage = document.querySelector(".overlay__button-image");
   }
 
   open() {
@@ -22,9 +20,15 @@ export class Popup {
   }
 
   setEventListeners() {
-    this._popupSelector.addEventListener("click", () => this.close());
-    this._closeButton.addEventListener("click", () => this.close());
-    this._closeButtonImage.addEventListener("click", () => this.close());
+    this._popupSelector.addEventListener("click", (evt) => {
+      if (
+        evt.target.classList.contains("overlay") ||
+        evt.target.classList.contains("overlay__button") ||
+        evt.target.classList.contains("overlay__button-image")
+      ) {
+        this.close();
+      }
+    });
     this._handleEscClose();
   }
 }

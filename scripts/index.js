@@ -1,15 +1,14 @@
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
 import {
-  /* openPopup,
-  closePopup, */
-  handleElementsFormSubmit,
-  handleProfileFormSubmit,
+  /* handleElementsFormSubmit,
+  handleProfileFormSubmit, */
   createCard,
 } from "./utils.js";
 import { Section } from "./Section.js";
 import { Popup } from "./Popup.js";
 import { PopupWithImage } from "./PopupWithImage.js";
+import { PopupWithForm } from "./PopupWithForm.js";
 
 const editOverlay = new Popup("#edit-overlay");
 editOverlay.setEventListeners();
@@ -18,9 +17,19 @@ const editButton = document
   .querySelector(".profile__button-edit")
   .addEventListener("click", () => editOverlay.open());
 
-const formElement = document
-  .querySelector("#edit-form")
-  .addEventListener("submit", handleProfileFormSubmit);
+const editForm = new PopupWithForm(
+  {
+    handleFormSubmit: (evt, formValue) => {
+      evt.preventDefault();
+      const profileName = document.querySelector(".profile__name");
+      const profileInfo = document.querySelector(".profile__info");
+      profileName.textContent = formValue.personName;
+      profileInfo.textContent = formValue.info;
+    },
+  },
+  "#edit-overlay"
+);
+editForm.setEventListeners();
 
 const cardOverlay = new Popup("#card-overlay");
 cardOverlay.setEventListeners();
@@ -29,9 +38,30 @@ const addButton = document
   .querySelector(".profile__button-add")
   .addEventListener("click", () => cardOverlay.open());
 
-const formCardElement = document
+/* const formCardElement = document
   .querySelector("#card-form")
-  .addEventListener("submit", handleElementsFormSubmit);
+  .addEventListener("submit", handleElementsFormSubmit); */
+
+const cardForm = new PopupWithForm(
+  {
+    handleFormSubmit: (evt, formValue) => {
+      evt.preventDefault();
+      const newCard = {
+        name: "",
+        link: "",
+      };
+
+      newCard.name = formValue.title;
+      newCard.link = formValue.link;
+
+      const cardElement = createCard(newCard.name, newCard.link);
+      const elements = document.querySelector(".elements");
+      elements.prepend(cardElement);
+    },
+  },
+  "#card-overlay"
+);
+cardForm.setEventListeners();
 
 const initialCards = [
   {

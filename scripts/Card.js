@@ -25,31 +25,6 @@ export class Card {
     heartButton.classList.toggle("elements__button_active");
   }
 
-  /*  _openPopupImage() {
-    const popupPhoto = this._popupImage.querySelector(".overlay__image");
-    const popupImageTitle = this._popupImage.querySelector(".overlay__caption");
-    this._popupImage.className = "overlay_opened";
-    popupPhoto.src = this._cardImage.src;
-    popupPhoto.alt = this._cardImage.alt;
-    popupImageTitle.textContent = this._cardTitle.textContent;
-  }
-
-  _closePopupImage(evt) {
-    if (
-      evt.target.classList.contains("overlay_opened") ||
-      evt.target.classList.contains("overlay__button") ||
-      evt.target.classList.contains("overlay__button-image")
-    ) {
-      this._popupImage.className = "overlay";
-    }
-  }
-
-  _closeEscapePopupImage(evt) {
-    if (evt.key === "Escape") {
-      this._popupImage.className = "overlay";
-    }
-  } */
-
   _setEventListeners() {
     const trashButton = this._element
       .querySelector(".elements__button-trash")
