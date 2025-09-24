@@ -1,30 +1,41 @@
-import { Card } from "./Card.js";
+/* import { Card } from "./Card.js"; */
 import { FormValidator } from "./FormValidator.js";
-import {
-  /* handleElementsFormSubmit,
-  handleProfileFormSubmit, */
-  createCard,
-} from "./utils.js";
+import { createCard } from "./utils.js";
 import { Section } from "./Section.js";
 import { Popup } from "./Popup.js";
 import { PopupWithImage } from "./PopupWithImage.js";
 import { PopupWithForm } from "./PopupWithForm.js";
+import { UserInfo } from "./UserInfo.js";
+
+const profileInfos = new UserInfo({
+  nameSelector: ".profile__name",
+  infoSelector: ".profile__info",
+});
 
 const editOverlay = new Popup("#edit-overlay");
 editOverlay.setEventListeners();
 
 const editButton = document
   .querySelector(".profile__button-edit")
-  .addEventListener("click", () => editOverlay.open());
+  .addEventListener("click", () => {
+    editOverlay.open();
+    const userInfos = profileInfos.getUserInfo();
+    const nameInput = document.querySelector("#name-input");
+    const infoInput = document.querySelector("#info-input");
+    nameInput.value = userInfos.userName;
+    infoInput.value = userInfos.info;
+  });
 
 const editForm = new PopupWithForm(
   {
     handleFormSubmit: (evt, formValue) => {
       evt.preventDefault();
-      const profileName = document.querySelector(".profile__name");
+      profileInfos.setUserInfo(formValue.personName, formValue.info);
+
+      /* const profileName = document.querySelector(".profile__name");
       const profileInfo = document.querySelector(".profile__info");
       profileName.textContent = formValue.personName;
-      profileInfo.textContent = formValue.info;
+      profileInfo.textContent = formValue.info; */
     },
   },
   "#edit-overlay"
@@ -37,10 +48,6 @@ cardOverlay.setEventListeners();
 const addButton = document
   .querySelector(".profile__button-add")
   .addEventListener("click", () => cardOverlay.open());
-
-/* const formCardElement = document
-  .querySelector("#card-form")
-  .addEventListener("submit", handleElementsFormSubmit); */
 
 const cardForm = new PopupWithForm(
   {
