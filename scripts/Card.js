@@ -1,10 +1,10 @@
 export class Card {
-  constructor(name, link, templateSelector, openPopupImage) {
+  constructor(name, link, templateSelector, handleCardClick) {
     this._name = name;
     this._link = link;
     this._templateSelector = templateSelector;
     this._popupImage = document.querySelector("#image-overlay");
-    this._openPopupImage = openPopupImage;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -37,7 +37,7 @@ export class Card {
         this._handleHeartButtonClick();
       });
     this._cardImage.addEventListener("click", () => {
-      this._openPopupImage(this);
+      this._handleCardClick(this);
     });
   }
 

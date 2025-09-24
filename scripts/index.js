@@ -1,11 +1,11 @@
-/* import { Card } from "./Card.js"; */
+import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
-import { createCard } from "./utils.js";
 import { Section } from "./Section.js";
 import { Popup } from "./Popup.js";
 import { PopupWithImage } from "./PopupWithImage.js";
 import { PopupWithForm } from "./PopupWithForm.js";
 import { UserInfo } from "./UserInfo.js";
+import { initialCards, formObject } from "./utils.js";
 
 const profileInfos = new UserInfo({
   nameSelector: ".profile__name",
@@ -70,32 +70,14 @@ const cardForm = new PopupWithForm(
 );
 cardForm.setEventListeners();
 
-const initialCards = [
-  {
-    name: "Vale de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
-  },
-  {
-    name: "Montanhas Carecas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
-  },
-  {
-    name: "Parque Nacional da Vanoise ",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
-  },
-];
+function createCard(name, link) {
+  const card = new Card(name, link, "#template-cards", () => {
+    imageOverlay.open(link, name);
+  });
+  const cardElement = card.generateCard();
+
+  return cardElement;
+}
 
 const cardList = new Section(
   {
@@ -109,15 +91,6 @@ const cardList = new Section(
 );
 
 cardList.renderer(initialCards);
-
-const formObject = {
-  formSelector: ".form",
-  inputSelector: ".form__item",
-  submitButtonSelector: ".form__button-submit",
-  inactiveButtonClass: "form__button-submit_disabled",
-  inputErrorClass: "form__input_type_error",
-  errorClass: "form__error_visible",
-};
 
 const form = document.querySelector(".form");
 
